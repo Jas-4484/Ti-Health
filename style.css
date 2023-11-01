@@ -7,12 +7,14 @@
     display: flex;
     justify-content:right;
     box-sizing: border-box;
+    overflow: hidden;
 }
 .right-panel{
     align-items: center;
     width: 25%;
     height: 100vh;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     background-color: #F94F4F;
     font-family: 'Be Vietnam Pro', sans-serif;
@@ -101,5 +103,8 @@ input{
 @media only screen and (max-width:900px) {
     .right-panel{
         width:100vh;
+    }
+    .opts{
+
     }
 }
