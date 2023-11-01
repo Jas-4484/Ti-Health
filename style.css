@@ -100,14 +100,6 @@ input{
     margin-bottom:0%;
     padding-bottom: 2%;
 }
-@media only screen and (max-width:900px) {
-    .right-panel{
-        width:100vh;
-    }
-    .opts{
-
-    }
-}
 .right-panel-n{
     align-items: center;
     width: 25%;
@@ -155,4 +147,10 @@ input{
 .login-n>h2{
     font-size: 30px;
     margin: 0;
+}
+@media only screen and (max-width:900px) {
+    .right-panel,.right-panel-n{
+        width:100vh;
+    }
+
 }
