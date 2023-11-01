@@ -123,9 +123,6 @@ input{
     font-size: 2rem;
     font-weight: 200; 
  }
-.right-panel-n>.login-n{
-    height: 60%;
-}
 .right-panel-n>form{
     display: flex;
     flex-direction: column;
@@ -151,6 +148,11 @@ input{
 @media only screen and (max-width:900px) {
     .right-panel,.right-panel-n{
         width:100vh;
+    }
+    .login-n{
+        justify-content: center;
+        height: 50%;
+        padding-bottom: 0;
     }
 
 }
