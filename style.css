@@ -108,3 +108,51 @@ input{
 
     }
 }
+.right-panel-n{
+    align-items: center;
+    width: 25%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #F94F4F;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: aliceblue;
+}
+.right-panel-n>img{
+    margin-top: 10px;
+    padding-bottom: 0;
+}
+.right-panel-n>h1{
+    font-size: 5rem;
+    margin:0;
+    font-weight: 700;
+}
+.right-panel-n>h3{
+    font-size: 2rem;
+    font-weight: 200; 
+ }
+.right-panel-n>.login-n{
+    height: 60%;
+}
+.right-panel-n>form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:0;
+    margin-top:40 px;
+}
+.login-n{
+    background-color: white;
+    padding-bottom: 5%;
+    margin-bottom: 10px;
+    width: 80%;
+    border-radius: 20px;
+    color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.login-n>h2{
+    font-size: 30px;
+    margin: 0;
+}
