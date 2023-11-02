@@ -156,3 +156,17 @@ input{
     }
 
 }
+.recover{
+    background-color: white;
+    padding: 4%;
+    width: 80%;
+    height: 40%;
+    margin-top: 20px;
+    border-radius: 20px;
+    margin-bottom: 20%;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
