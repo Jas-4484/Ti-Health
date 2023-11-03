@@ -54,5 +54,20 @@ html,body{
 .dash{
     background-color: white;
     flex: 4;
+    display: flex;
     border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.grid {
+    display: grid;
+    justify-content: stretch;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+.gi{
+    height: 240px;
+    width: 340px;
+    background-color: rgb(225, 225, 225);
+    border-radius: 20px;
 }
