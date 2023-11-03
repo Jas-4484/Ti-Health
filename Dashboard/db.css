@@ -59,13 +59,14 @@ html,body{
     justify-content: center;
     align-items: center;
 }
-.grid {
-    display: grid;
-    justify-content: stretch;
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
-.gi{
+.fi{
     height: 240px;
     width: 340px;
     background-color: rgb(225, 225, 225);
