@@ -55,7 +55,7 @@ html,body{
     background-color: white;
     flex: 4;
     border-radius: 30px;
-    padding: 20px;
+    padding: 30px;
     padding-top: 5px;
 }
 .head {
@@ -70,13 +70,31 @@ form{
     height: 88%;
     background-color: #ffecec;
     border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 20px 20px 0px;
+
 }
-
-
-
-
-
-
+form>h2{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 10px;
+}
+#issue,#desc{
+  border-radius: 10px;
+  height: 5%;
+  margin-bottom: 2%;
+}
+#issue{
+  width: 75%;
+  border: none;
+}
+textarea{
+  min-height: 300px;
+  width: 888px;
+  border: none;
+}
 
 .tgl {
     display: none;
@@ -96,8 +114,9 @@ form{
     + .tgl-btn {
       outline: 0;
       display: block;
-      width: 4em;
+      width: 10%;
       height: 2em;
+      margin-left: 5%;
       position: relative;
       cursor: pointer;
       user-select: none;
@@ -124,78 +143,16 @@ form{
     }
   }
   
-  .tgl-light {
-    + .tgl-btn {
-      background: #f0f0f0;
-      border-radius: 2em;
-      padding: 2px;
-      transition: all .4s ease;
-      &:after {
-        border-radius: 50%;
-        background: #fff;
-        transition: all .2s ease;
-      }
-    }
-    
-    &:checked + .tgl-btn {
-      background: #9FD6AE;
-    }
-  }
-  
-  .tgl-ios {
-    + .tgl-btn {
-      background: #fbfbfb;
-      border-radius: 2em;
-      padding: 2px;
-      transition: all .4s ease;
-      border: 1px solid #e8eae9;
-      &:after {
-        border-radius: 2em;
-        background: #fbfbfb;
-        transition:
-          left .3s cubic-bezier(
-            0.175, 0.885, 0.320, 1.275
-          ),
-          padding .3s ease, margin .3s ease;
-        box-shadow:
-          0 0 0 1px rgba(0,0,0,.1),
-          0 4px 0 rgba(0,0,0,.08);
-      }
-      
-      &:hover:after {
-        will-change: padding;
-      }
-      
-      &:active {
-        box-shadow: inset 0 0 0 2em #e8eae9;
-        &:after {
-          padding-right: .8em;
-        }
-      }
-    }
-    
-    &:checked + .tgl-btn {
-      background: #d9868a;
-      &:active {
-        box-shadow: none;
-        &:after {
-          margin-left: -.8em;
-        }
-      }
-    }
-  }
-  
   .tgl-skewed {
     + .tgl-btn {
+      border-radius: 10px;
       overflow: hidden;
-      transform: skew(-10deg);
       backface-visibility: hidden;
       transition: all .2s ease;
       font-family: sans-serif;
       background: #888;
       &:after,
       &:before {
-        transform: skew(10deg);
         display: inline-block;
         transition: all .2s ease;
         width: 100%;
@@ -240,83 +197,11 @@ form{
       }
     }
   }
+
+.slots{
+  background-color: #fff;
+  width:85%;
+  min-height: 140px;
+  border-radius: 10px;
+}
   
-  .tgl-flat {
-    + .tgl-btn {
-      padding: 2px;
-      transition: all .2s ease;
-      background: #fff;
-      border: 4px solid #f2f2f2;
-      border-radius: 2em;
-      &:after {
-        transition: all .2s ease;
-        background: #f2f2f2;
-        content: "";
-        border-radius: 1em;
-      }
-    }
-    
-    &:checked + .tgl-btn {
-      border: 4px solid #7FC6A6;
-      &:after {
-        left: 50%;
-        background: #7FC6A6;
-      }
-    }
-  }
-  
-  .tgl-flip {
-    + .tgl-btn {
-      padding: 2px;
-      transition: all .2s ease;
-      font-family: sans-serif;
-      perspective: 100px;
-      &:after,
-      &:before {
-        display: inline-block;
-        transition: all .4s ease;
-        width: 100%;
-        text-align: center;
-        position: absolute;
-        line-height: 2em;
-        font-weight: bold;
-        color: #fff;
-        position: absolute;
-        top: 0;
-        left: 0;
-        backface-visibility: hidden;
-        border-radius: 4px;
-      }
-      
-      &:after {
-        content: attr(data-tg-on);
-        background: #02C66F;
-        transform: rotateY(-180deg);
-      }
-      
-      &:before {
-        background: #FF3A19;
-        content: attr(data-tg-off);
-      }
-  
-      &:active:before {
-        transform: rotateY(-20deg);
-      }
-    }
-    
-    &:checked + .tgl-btn {
-      &:before {
-        transform: rotateY(180deg);
-      }
-      
-      &:after {
-        transform: rotateY(0);
-        left: 0;
-        background: #7FC6A6;
-      }
-      
-      &:active:after {
-        transform: rotateY(20deg);
-      }
-    }
-  }
