@@ -25,22 +25,41 @@
         <div class="dash">
             <div class="head">
                 <h2>APPOINTMENT</h2>
-                <h2>11 November,2023</h2>
+                <h2 id="date"></h2>
             </div>
             <form>
-                <h2>Issue </h2>
+                <!-- <h2>Issue </h2> -->
+                <label for="issue">Issue</label>
                 <input name="issue" id="issue">
-                <input class="tgl tgl-skewed" id="cb3" type="checkbox"/>
-                <label class="tgl-btn" data-tg-off="New Visit" data-tg-on="Return Visit" for="cb3"></label>
-                <h2>Description </h2>
+                <!-- <input class="tgl tgl-skewed" id="cb3" type="checkbox"/>
+                <label class="tgl-btn" data-tg-off="New Visit" data-tg-on="Return Visit" for="cb3"></label> -->
+                <label for="desc">Description </label>
                 <textarea name="desc" id="desc" rows="20" cols="10"></textarea>
-                <h2 style="margin-right: 40px;">Time Slot </h2>
+                <label style="margin-right: 40px;">Time Slot </label>
                 <div class="slots">
 
                 </div>
+                <button class="submit">SUBMIT</button>
             </form>
         </div>
     </div>
     </div>
+    <script>
+        var today = new Date(); 
+
+        var yyyy = today.getFullYear();
+        const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        var mm = month[today.getMonth()];
+        var dd = today.getDate();
+    
+        if (dd < 10) {
+        dd = '0' + dd;
+        }
+        
+        var formattedDate = dd + '-' + mm + '-' + yyyy;
+        document.getElementById('date').innerHTML = formattedDate;
+        
+        </script>
+        
 </body>
 </html>
