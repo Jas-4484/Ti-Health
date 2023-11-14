@@ -82,17 +82,20 @@ form>label{
   margin-right: 10px;
   font-size: 22px;
 }
+#issue-lab {
+  margin-right:  7.5%;
+}
 #issue,#desc{
   border-radius: 10px;
-  height: 5%;
   margin-bottom: 2%;
 }
 #issue{
-  width: 92%;
+  width: 85%;
+  height: 2.5rem;
   border: none;
 }
 textarea{
-  min-height: 300px;
+  max-height: 17rem;
   width: 85%;
   border: none;
   resize: none;
@@ -210,7 +213,7 @@ textarea{
 .submit {
   align-self: center;
   margin: auto;
-  margin-top: 17px;
+  margin-top: 1.7rem;
   border-radius: 30px;
   background: #ECECEC;
   color: white;
