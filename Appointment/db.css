@@ -46,6 +46,11 @@ html,body{
     padding: 8% 2% 8%;
     font-weight: 600;
 }
+.navbar>ul>li>a{
+  text-decoration: none;
+  color: inherit;
+}
+
 #pic{ 
     height: 60px;
     width: 60px;
@@ -76,27 +81,32 @@ form{
     padding: 20px 20px 0px;
 
 }
-form>h2{
+form>label{
   margin-top: 0px;
   margin-bottom: 0px;
   margin-right: 10px;
+  font-size: 22px;
+}
+#issue-lab {
+  margin-right:  7.5%;
 }
 #issue,#desc{
   border-radius: 10px;
-  height: 5%;
   margin-bottom: 2%;
 }
 #issue{
-  width: 75%;
+  width: 85%;
+  height: 2.5rem;
   border: none;
 }
 textarea{
-  min-height: 300px;
-  width: 888px;
+  max-height: 17rem;
+  width: 85%;
   border: none;
+  resize: none;
 }
 
-.tgl {
+/* .tgl {
     display: none;
     &,
     &:after,
@@ -196,7 +206,7 @@ textarea{
         left: 10%;
       }
     }
-  }
+  } */
 
 .slots{
   background-color: #fff;
@@ -205,3 +215,17 @@ textarea{
   border-radius: 10px;
 }
   
+.submit {
+  align-self: center;
+  margin: auto;
+  margin-top: 1.7rem;
+  border-radius: 30px;
+  background: #ECECEC;
+  color: white;
+  font-weight: 600;
+  font-size: 30px;
+  box-shadow: 2px 4px 3px 0px rgba(0, 0, 0, 0.25);
+  background-color: #F94F4F;
+  padding: 10px 40px;   
+  border: none;
+}

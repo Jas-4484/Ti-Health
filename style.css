@@ -12,6 +12,7 @@
 .right-panel{
     align-items: center;
     width: 25%;
+    min-width: 390px;
     height: 100vh;
     display: flex;
     justify-content: space-between;
@@ -19,6 +20,8 @@
     background-color: #F94F4F;
     font-family: 'Be Vietnam Pro', sans-serif;
     color: aliceblue;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .right-panel>img{
     margin-top: 40px;
@@ -86,29 +89,34 @@ input{
 .opts{
     background-color: aliceblue;
     width: 85%;
-    margin-top: 60px;
+    margin-top: 40px;
     padding-top: 2%;
     display: flex;
     justify-content: space-around;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
+    align-items: center;
 }
 .opts>a{
+    max-width: 100px;
     text-decoration: none;
+    text-align: center;
     padding-top: 1%;
-    margin-left:12%;
     margin-bottom:0%;
-    padding-bottom: 2%;
+    padding-bottom: 3%;
 }
 .right-panel-n{
     align-items: center;
     width: 25%;
+    min-width: 390px;
     height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: #F94F4F;
     font-family: 'Be Vietnam Pro', sans-serif;
     color: aliceblue;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .right-panel-n>img{
     margin-top: 10px;
@@ -122,6 +130,7 @@ input{
 .right-panel-n>h3{
     font-size: 2rem;
     font-weight: 200; 
+    margin-bottom: 1rem;
  }
 .right-panel-n>form{
     display: flex;
@@ -147,11 +156,11 @@ input{
 }
 @media only screen and (max-width:900px) {
     .right-panel,.right-panel-n{
-        width:100vh;
+        width:100%;
     }
     .login-n{
         justify-content: center;
-        height: 50%;
+        height: 80%;
         padding-bottom: 0;
     }
 
