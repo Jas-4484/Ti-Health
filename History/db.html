@@ -24,23 +24,50 @@
             </div>
         <div class="dash">
             <h2>History</h2>
-            <div class="log ">
-                <div class="scrollbar" id="scrollbar1">
-                <div class="record"></div>
-                <div class="record"></div>
-                <div class="record"></div>
-                <div class="record"></div>
-                <div class="record"></div>            
-                <div class="record"></div>
-                <div class="record"></div>
-                <div class="record"></div>
-                <div class="record"></div>
-                <div class="record"></div>
-                <div class="record"></div>
+            <div class="log" id="log">
+                <div class="record">Record 1 </div>
+                <div class="record">Record 2 </div>
+                <div class="record">Record 3 </div>
+                <div class="record">Record 4 </div>
+                <div class="record">Record 5 </div>
+                <div class="record">Record 6 </div>
+                <div class="record">Record 7 </div>
+                <div class="record">Record 8 </div>
+                <div class="record">Record 9 </div>
+                <div class="record">Record 10 </div>
+                <div class="record">Record 11 </div>
             </div>
+            <div id="MyDisplay" class="RecordDisplay">
+                <div class="record-content">
+                <span class="close">&times;</span>
+                <p>Here are the record details : </p>
+                </div>
             </div>
         </div>
     </div>
     </div>
 </body>
+<script>
+    var RecordDisplay = document.getElementById("MyDisplay");
+    var span = document.getElementsByClassName("close")[0];
+    var log = document.getElementById("log");
+    const n = log.children.length;
+
+    for(var i = 0; i < n; i++){
+        var btn = document.getElementsByClassName("record")[i];
+        btn.onclick = function() {
+            RecordDisplay.style.display = "block";
+        }
+        span.onclick = function() {
+            RecordDisplay.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == RecordDisplay) {
+                RecordDisplay.style.display = "none";
+            }
+        }
+    }
+    
+</script>
+
 </html>
