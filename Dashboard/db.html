@@ -24,14 +24,77 @@
             </div>
         <div class="dash">
             <div class="flex">
+                <div class="fi time">
+                    <h2>Upcoming Appointment</h2>
+                    <div class="dt">
+                        <h2 style="color: aliceblue;">20 JAN</h2>
+                        <h4 style="color: aliceblue;">6:30 PM</45>
+                    </div>
+                    <div class="mlink">
+                        <a href="../">Join</a>
+                    </div>
+                </div>
+                <div class="fi "></div>
+                <div class="fi prescription">
+                    <h2>Prescriptions</h2>
+                    <div class="pres">
+                        <h3>10 JAN</h3>
+                        <h4>SAVE</h4>
+                    </div>
+                    <div class="pres">
+                        <h3>10 JAN</h3>
+                        <h4>SAVE</h4>
+                    </div>
+                    <div class="pres">
+                        <h3>10 JAN</h3>
+                        <h4>SAVE</h4>
+                    </div>
+                </div>
                 <div class="fi"></div>
-                <div class="fi"></div>
-                <div class="fi"></div>
-                <div class="fi"></div>
-                <div class="fi"></div>
+                <div class="fi carousel">
+                    <div class="ci active">Content 1</div>
+                    <div class="ci">Content 2</div>
+                    <div class="ci">Content 3</div>
+                    <div class="cnav">
+                        <span class="cbtn"></span> 
+                        <span class="cbtn"></span>    
+                        <span class="cbtn"></span>    
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     </div>
+    <script>
+        const items = document.querySelectorAll('.ci');
+        const buttons = document.querySelectorAll('.cbtn');
+        let currentIndex = 0;
+        let interval = setInterval(rotateCarousel, 10000);
+
+        function changeSlide(index) {
+            buttons.forEach(btn => btn.classList.remove('active'));
+            items.forEach(item => item.classList.remove('active'));
+
+            buttons[index].classList.add('active');
+            items[index].classList.add('active');
+        }
+
+        function rotateCarousel() {
+            currentIndex = (currentIndex + 1) % items.length;
+            changeSlide(currentIndex);
+        }
+
+        buttons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                clearInterval(interval); // Clear the automatic rotation interval
+                currentIndex = index;
+                changeSlide(index);
+                setTimeout(() => {
+                    interval = setInterval(rotateCarousel, 10000); // Restart automatic rotation after a delay
+                }, 3000); // Adjust this delay as needed to prevent rapid transitions
+            });
+        });
+
+    </script>
 </body>
 </html>

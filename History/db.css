@@ -82,3 +82,26 @@ html,body{
     background-color: rgb(252, 208, 208);
     margin-bottom: 2%;
 }
+.scrollbar {
+    height: 100%;
+    width: 99%;
+    overflow: auto;
+}
+/*       ScrollBar 1        */
+
+#scrollbar1::-webkit-scrollbar {
+    width: 14px;
+}
+
+#scrollbar1::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #e7e7e7;
+
+}
+
+#scrollbar1::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #F94F4F;
+}
+
+

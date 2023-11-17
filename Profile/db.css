@@ -54,6 +54,11 @@ h2,h3{
     padding: 8% 2% 8%;
     font-weight: 600;
 }
+.navbar>ul>li>a{
+    text-decoration: none;
+    color: inherit;
+}
+
 #pic{ 
     height: 60px;
     width: 60px;
@@ -110,6 +115,7 @@ input,button {
     width: 730px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    resize: none;
 }
 
 .item{
