@@ -176,3 +176,23 @@ html,body{
 .cbtn.active {
     background-color: #fff; /* Change the active button color */
 }
+
+.emergency{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.emergency>h2{
+    margin-top: 10%;
+}
+.emergency>h1{
+    padding: 0% 10%;
+    line-height: 140%;
+}
+.emergency span{
+    color:#ffffff;
+    background-color:#F94F4F;
+    padding: 2% 5%;
+    border-radius: 20px;
+    cursor:pointer;
+}
