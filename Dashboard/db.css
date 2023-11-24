@@ -139,16 +139,21 @@ html,body{
 }
 .carousel{
     position: relative;
-
+    display:flex;
+    justify-content:space-around;
 }
 .ci{
     height: 100%;
     width: 100%;
     border-radius: 20px;
-    background-color: rgb(255, 130, 47);
-    padding: 0%;
+    background-color:#F94F4F;
+    padding-top: %;
     position: absolute;
     z-index: 0;
+    color:white;
+    font-size:30px;
+    font-weight:700;
+    text-align:center;
 }
 .cnav {
     position: absolute;
