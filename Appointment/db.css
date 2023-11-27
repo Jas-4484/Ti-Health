@@ -105,6 +105,57 @@ textarea{
   border: none;
   resize: none;
 }
+.slots{
+  display:flex;
+  flex-direction:row;
+
+}
+.time{
+  display:flex;
+  flex-direction:row;
+  width:60%;
+  justify-content:space-around;
+  align-items:center
+}
+.t{
+    height: 60%;
+    width: 15%;
+    text-align: center;
+    border-radius: 10px;
+    background-color: pink;
+    font-size: 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
+}
+.t.selected {
+  background-color: #F94F4F;
+  color: white;
+}
+
+.date {
+  flex: 1;
+  width: 40%;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.datePicker {
+  width: 60%;
+  height: 80%%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+.date>label{
+  font-size:20px;
+}
 
 /* .tgl {
     display: none;

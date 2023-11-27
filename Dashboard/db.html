@@ -34,7 +34,6 @@
                         <a href="../">Join</a>
                     </div>
                 </div>
-                <div class="fi "></div>
                 <div class="fi prescription">
                     <h2>Prescriptions</h2>
                     <div class="pres">
@@ -50,8 +49,20 @@
                         <h4>SAVE</h4>
                     </div>
                 </div>
-                <div class="fi"></div>
-                <div class="fi carousel">
+                <div class="fi emergency">
+                    <h2>IF EMERGENCY</h2>
+                    <h1 onclick="makePhoneCall('+918288008122')">CALL <span>8288008122</span></h1>
+                </div>
+                <div class="fi carousel carousel1">
+                    <div class="ci active">Content 1</div>
+                    <div class="ci">Content 2</div>
+                    <div class="cnav">
+                        <span class="cbtn"></span> 
+                        <span class="cbtn"></span>    
+                        <span class="cbtn"></span>    
+                    </div>
+                </div>
+                <div class="fi carousel carousel2">
                     <div class="ci active">Content 1</div>
                     <div class="ci">Content 2</div>
                     <div class="ci">Content 3</div>
@@ -66,35 +77,41 @@
     </div>
     </div>
     <script>
-        const items = document.querySelectorAll('.ci');
-        const buttons = document.querySelectorAll('.cbtn');
-        let currentIndex = 0;
-        let interval = setInterval(rotateCarousel, 10000);
+        const carousels = document.querySelectorAll('.carousel');
 
-        function changeSlide(index) {
-            buttons.forEach(btn => btn.classList.remove('active'));
-            items.forEach(item => item.classList.remove('active'));
+        carousels.forEach((carousel, carouselIndex) => {
+            const items = carousel.querySelectorAll('.ci');
+            const buttons = carousel.querySelectorAll('.cbtn');
+            let currentIndex = 0;
+            let interval = setInterval(rotateCarousel, 10000);
 
-            buttons[index].classList.add('active');
-            items[index].classList.add('active');
-        }
+            function changeSlide(index) {
+                buttons.forEach(btn => btn.classList.remove('active'));
+                items.forEach(item => item.classList.remove('active'));
 
-        function rotateCarousel() {
-            currentIndex = (currentIndex + 1) % items.length;
-            changeSlide(currentIndex);
-        }
+                buttons[index].classList.add('active');
+                items[index].classList.add('active');
+            }
 
-        buttons.forEach((button, index) => {
-            button.addEventListener('click', () => {
-                clearInterval(interval); // Clear the automatic rotation interval
-                currentIndex = index;
-                changeSlide(index);
-                setTimeout(() => {
-                    interval = setInterval(rotateCarousel, 10000); // Restart automatic rotation after a delay
-                }, 3000); // Adjust this delay as needed to prevent rapid transitions
+            function rotateCarousel() {
+                currentIndex = (currentIndex + 1) % items.length;
+                changeSlide(currentIndex);
+            }
+
+            buttons.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    clearInterval(interval); 
+                    currentIndex = index;
+                    changeSlide(index);
+                    setTimeout(() => {
+                        interval = setInterval(rotateCarousel, 10000);
+                    }, 3000);
+                });
             });
         });
-
+        function makePhoneCall(phoneNumber) {
+      window.location.href = 'tel:' + phoneNumber;
+    }
     </script>
 </body>
 </html>

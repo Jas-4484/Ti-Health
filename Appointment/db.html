@@ -37,7 +37,16 @@
                 <textarea name="desc" id="desc" rows="20" cols="10"></textarea>
                 <label style="margin-right: 40px;">Time Slot </label>
                 <div class="slots">
-
+                    <div class="time">
+                        <div class="t">11:30</div>
+                        <div class="t">12:00</div>
+                        <div class="t">15:00</div>
+                        <div class="t">16:00</div>
+                    </div>
+                        <div class="date">
+                            <label>Date  </label>
+                            <input type="date" id="selectedDate" class="datePicker" max="">
+                        </div>
                 </div>
                 <button class="submit">SUBMIT</button>
             </form>
@@ -58,7 +67,25 @@
         
         var formattedDate = dd + '-' + mm + '-' + yyyy;
         document.getElementById('date').innerHTML = formattedDate;
-        
+
+        // JavaScript code for radio button functionality
+        const timeButtons = document.querySelectorAll('.time .t');
+
+        function selectTime(selectedButton) {
+            timeButtons.forEach(button => {
+                if (button !== selectedButton) {
+                    button.classList.remove('selected');
+                }
+            });
+            selectedButton.classList.add('selected');
+        }
+
+        timeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                selectTime(button);
+            });
+        });
+
         </script>
         
 </body>
