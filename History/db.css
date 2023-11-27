@@ -76,14 +76,19 @@ html,body{
     height: 500px;
 }
 .record{
+    display: flex;
+    align-items: center; 
+    font-size: x-large;
+    justify-content: space-between;
     width: 95%;
     height: 70px;
     border-radius: 10px;
     background-color: rgb(252, 208, 208);
     margin-bottom: 2%;  
-      padding-left: 10px;
-    padding-top: 1%;
+    padding-left: 20px;
+    padding-right: 20px;
 }
+
 
 .scrollbar {
     height: 100%;
@@ -112,8 +117,8 @@ html,body{
 
 .record:hover {
     background-color: #000000;
-    text-decoration: underline;
     color: #FFFFFF;
+    cursor: pointer;
 }
 
 .RecordDisplay {
@@ -149,4 +154,9 @@ html,body{
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.RecordDisplay >.record-content > .record-head, .record-date {
+    font-size: x-large;
+    margin: 4px;
 }
