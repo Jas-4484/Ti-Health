@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor's Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #F94F4F;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: #FF9A9A;
+      padding: 15px;
+      justify-content: space-around;
+    }
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar ul li {
+      display: inline;
+
+    }
+    .navbar ul li:last-child {
+      margin-right: 0;
+    }
+    .navbar ul li a {
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      display: none; /* Initially hide the container */
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .card {
+      width: calc(50% - 20px);
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .card h2 {
+      margin-top: 0;
+    }
+    .card p {
+      margin: 5px 0;
+    }
+    .join-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #FF9A9A;
+      color: #F94F4F;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .login-container {
+      margin-top: 50px;
+      text-align: center;
+    }
+    .login-form {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .login-form input[type="password"] {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      border: none;
+      width: 200px;
+    }
+    .login-form input[type="submit"] {
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #FF9A9A;
+      color: #F94F4F;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <ul>
+    <li><a href="#" id="meetingsTab">Welcome Doctor</a></li>
+    <li><a href="#" id="meetingsTab" style="margin-left: 38%;">Meetings</a></li>
+    <li style="float: right;"><a href="#" id="logoutBtn">Logout</a></li>
+    </ul>
+  </div>
+
+  <!-- Meetings Section -->
+  <div class="container" id="meetingsContainer">
+    <!-- Dummy Meeting Cards -->
+    <div class="card">
+      <h2>Patient: John Doe</h2>
+      <p>Timings: 10:00 AM - 11:00 AM</p>
+      <p>Issue: Headache</p>
+      <a href="#" class="join-btn">Join Meeting</a>
+    </div>
+    <div class="card">
+      <h2>Patient: Jane Smith</h2>
+      <p>Timings: 11:30 AM - 12:30 PM</p>
+      <p>Issue: Fever</p>
+      <a href="#" class="join-btn">Join Meeting</a>
+    </div>
+    <!-- Add more dummy records as needed -->
+  </div>
+
+  <!-- Login Page -->
+  <div class="login-container" id="loginContainer">
+    <form class="login-form" id="loginForm">
+      <input type="password" id="passwordInput" placeholder="Enter Password" style="width: 80%;">
+      <br><br>
+      <input type="submit" value="Login" style="width: 100%; color: #FFFFFF; ">
+    </form>
+  </div>
+
+  <script>
+    // Mocking login functionality
+    const loginForm = document.getElementById('loginForm');
+    const passwordInput = document.getElementById('passwordInput');
+    const loginContainer = document.getElementById('loginContainer');
+    const meetingsContainer = document.getElementById('meetingsContainer');
+    const meetingsTab = document.getElementById('meetingsTab');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    loginForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const enteredPassword = passwordInput.value;
+
+      // Dummy password for demonstration (Replace with actual authentication logic)
+      const correctPassword = 'doctorpassword';
+
+      if (enteredPassword === correctPassword) {
+        // Show authenticated elements (Meetings tab and Logout button)
+        meetingsTab.style.display = 'inline';
+        logoutBtn.style.display = 'inline';
+        loginContainer.style.display = 'none'; // Hide login form after successful login
+        meetingsContainer.style.display = 'flex'; // Show meetings section
+      } else {
+        alert('Incorrect password. Please try again.');
+      }
+    });
+
+    // Mocking logout functionality
+    logoutBtn.addEventListener('click', function(event) {
+      event.preventDefault();
+      // Reset the interface to initial state (hide authenticated elements and show login form)
+      meetingsTab.style.display = 'none';
+      logoutBtn.style.display = 'none';
+      loginContainer.style.display = 'block';
+      meetingsContainer.style.display = 'none'; // Hide meetings section on logout
+      passwordInput.value = ''; // Clear password input on logout
+    });
+  </script>
+</body>
+</html>

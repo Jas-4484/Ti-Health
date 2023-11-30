@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="db.css">
+</head>
+<body>
+    <div class="home">
+        <div class="main">
+            <div class="nav">
+                <div class="navbar">
+                <img src="dp.jpeg" alt="" id="pic">
+                <h1>Jasdeep Singh</h1>
+                <h5>jsingh11_be22@thapar.edu</h5>
+                <ul>
+                    <li><a href="..\Dashboard\db.html">Dashboard</a></li>
+                    <li><a href="..\Appointment\db.html">Appointment</a></li>
+                    <li><a href="..\History\db.html">History</a></li>
+                    <li><a href="..\Profile\db.html">Profile</a></li> 
+                </ul>
+                </div>
+            </div>
+        <div class="dash">
+            <h2>History</h2>
+            <div class="log" id="log">
+                <div class="record">
+                    <p class="record-head">Stomachache</p>
+                    <p class="record-date">13 November, 2023</p>
+                </div>
+
+                <div class="record">
+                    <p class="record-head">Head Injury</p>
+                    <p class="record-date">13 November, 2023</p>
+                </div>
+
+                <div class="record">
+                    <p class="record-head">Heart Break </p>
+                    <p class="record-date"></p>
+                </div>
+
+                <div class="record">
+                    <p class="record-head">Record 4 </p>
+                    <p class="record-date"></p>
+                </div>
+
+                <div class="record">
+                    <p class="record-head">Record 5 </p>
+                    <p class="record-date"></p>
+                </div>
+
+                <div class="record">
+                    <p class="record-head">Record 6 </p>
+                    <p class="record-date"></p>
+                </div>
+
+                <div class="record">
+                    <p class="record-head">Record 7 </p>
+                    <p class="record-date"></p>
+                </div>
+
+                <div class="record">
+                    <p class="record-head">Record 8 </p>
+                    <p class="record-date"></p>
+                </div>
+
+                <div class="record">
+                    <p class="record-head">Record 9 </p>
+                    <p class="record-date"></p>
+                </div>
+
+                <div class="record">
+                    <p class="record-head">Record 10 </p>
+                    <p class="record-date"></p>
+                </div>
+
+                <div class="record">
+                    <p class="record-head">Record 11 </p>
+                    <p class="record-date"></p>
+                </div>
+
+            </div>
+            <div id="MyDisplay" class="RecordDisplay">
+            
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+    var log = document.getElementById("log");
+    const n = log.children.length;
+
+    var recordTexts = [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    ];
+
+    for (var i = 0; i < n; i++) {
+    var record = document.getElementsByClassName("record")[i];
+    var randomText = recordTexts[i];
+
+    record.onclick = function(index) {
+        return function () {
+            var recordHead = this.innerHTML;
+            console.log(recordHead);
+            var RecordDisplay = document.createElement("div");
+            RecordDisplay.className = "RecordDisplay";
+            var content = document.createElement("div");
+            content.className = "record-content";
+            content.innerHTML = '<span class="close">&times;</span>' + recordHead + '<hr>' + recordTexts[index] + '</p>';
+            RecordDisplay.appendChild(content);
+            document.body.appendChild(RecordDisplay);
+            RecordDisplay.style.display = "block";
+
+            var span = content.getElementsByClassName("close")[0];
+            span.onclick = function () {
+                RecordDisplay.style.display = "none";
+            };
+
+            window.onclick = function (event) {
+                if (event.target == RecordDisplay) {
+                    RecordDisplay.style.display = "none";
+                }
+            };
+        };
+    }(i);
+}
+</script>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="db.css">
+</head>
+<body>
+    <div class="home">
+        <div class="main">
+            <div class="nav">
+                <div class="navbar">
+                <img src="dp.jpeg" alt="" id="pic">
+                <h1>Jasdeep Singh</h1>
+                <h5>jsingh11_be22@thapar.edu</h5>
+                <ul>
+                    <li><a href="..\Dashboard\db.html">Dashboard</a></li>
+                    <li><a href="..\Appointment\db.html">Appointment</a></li>
+                    <li><a href="..\History\db.html">History</a></li>
+                    <li><a href="..\Profile\db.html">Profile</a></li>   
+                </ul>
+                </div>
+            </div>
+        <div class="dash">
+            <div class="head">
+                <h2>APPOINTMENT</h2>
+                <h2 id="date"></h2>
+            </div>
+            <form>
+                <!-- <h2>Issue </h2> -->
+                <label for="issue" id="issue-lab">Issue</label>
+                <input name="issue" id="issue">
+                <!-- <input class="tgl tgl-skewed" id="cb3" type="checkbox"/>
+                <label class="tgl-btn" data-tg-off="New Visit" data-tg-on="Return Visit" for="cb3"></label> -->
+                <label for="desc">Description </label>
+                <textarea name="desc" id="desc" rows="20" cols="10"></textarea>
+                <label style="margin-right: 40px;">Time Slot </label>
+                <div class="slots">
+                    <div class="time">
+                        <div class="t">11:30</div>
+                        <div class="t">12:00</div>
+                        <div class="t">15:00</div>
+                        <div class="t">16:00</div>
+                    </div>
+                </div>
+                <button class="submit">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+    </div>
+    <script>
+        var today = new Date(); 
+
+        var yyyy = today.getFullYear();
+        const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        var mm = month[today.getMonth()];
+        var dd = today.getDate();
+    
+        if (dd < 10) {
+        dd = '0' + dd;
+        }
+        
+        var formattedDate = dd + '-' + mm + '-' + yyyy;
+        document.getElementById('date').innerHTML = formattedDate;
+
+        // JavaScript code for radio button functionality
+        const timeButtons = document.querySelectorAll('.time .t');
+
+        function selectTime(selectedButton) {
+            timeButtons.forEach(button => {
+                if (button !== selectedButton) {
+                    button.classList.remove('selected');
+                }
+            });
+            selectedButton.classList.add('selected');
+        }
+
+        timeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                selectTime(button);
+            });
+        });
+
+        </script>
+        
+</body>
+</html>

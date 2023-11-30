@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    box-sizing:content-box;
+}
+.home{
+    background-color: #F94F4F;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main{
+    width: 95%;
+    height: 95%;
+    display: flex;
+}
+.nav{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.navbar{
+    height: 80%;
+    width: 100%;
+    color:#FFFFFF;
+    margin: 0;
+}
+.navbar>h5{
+    margin-top: 0;
+    opacity: 70%;
+    font-weight: 400;
+}
+.navbar>ul{
+    list-style: none;
+    margin: 0;
+    padding: 15% 0% 0%;
+}
+.navbar>ul>li{
+    font-size: larger;
+    padding: 8% 2% 8%;
+    font-weight: 600;
+}
+.navbar>ul>li>a{
+    text-decoration: none;
+    color: inherit;
+}
+
+#pic{ 
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+}
+.dash{
+    background-color: white;
+    flex: 4;
+    border-radius: 30px;
+    padding: 20px;
+    padding-top: 0;
+}
+.log{
+    background-color: rgb(245, 245, 245);
+    flex-direction: column;
+    width: 95%;
+    height: 80%;
+    border-radius: 20px;
+    padding: 2% 2% 2%;
+    float: left;
+    width:1000px;
+    overflow-y: auto;
+    height: 500px;
+}
+.record{
+    display: flex;
+    align-items: center; 
+    font-size: x-large;
+    justify-content: space-between;
+    width: 95%;
+    height: 70px;
+    border-radius: 10px;
+    background-color: rgb(252, 208, 208);
+    margin-bottom: 2%;  
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.scrollbar {
+    height: 100%;
+    width: 99%;
+    overflow: auto;
+}
+/*       ScrollBar 1        */
+
+#scrollbar1::-webkit-scrollbar {
+    width: 14px;
+}
+
+#scrollbar1::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #e7e7e7;
+
+}
+
+#scrollbar1::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #F94F4F;
+}
+
+
+
+
+.record:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.RecordDisplay {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+    
+.record-content {
+    background-color: #F94F4F;
+    margin: 20% auto;
+    border-radius: 30px;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+    
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.RecordDisplay >.record-content > .record-head, .record-date {
+    font-size: x-large;
+    margin: 4px;
+}
