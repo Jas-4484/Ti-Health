@@ -2,12 +2,15 @@
 *{
     margin: 0;
     content: box-border;
+    
 }
 .main{
     display: flex;
     justify-content:right;
     box-sizing: border-box;
     overflow: hidden;
+    background-image:url("centre.jpg");
+    background-size:cover;
 }
 .right-panel{
     align-items: center;
