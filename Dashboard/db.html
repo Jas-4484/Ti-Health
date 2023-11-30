@@ -1,80 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="db.css">
 </head>
+
 <body>
     <div class="home">
         <div class="main">
             <div class="nav">
                 <div class="navbar">
-                <img src="dp.jpeg" alt="" id="pic">
-                <h1>Jasdeep Singh</h1>
-                <h5>jsingh11_be22@thapar.edu</h5>
-                <ul>
-                    <li><a href="..\Dashboard\db.html">Dashboard</a></li>
-                    <li><a href="..\Appointment\db.html">Appointment</a></li>
-                    <li><a href="..\History\db.html">History</a></li>
-                    <li><a href="..\Profile\db.html">Profile</a></li>     
-                </ul>
+                    <img src="dp.jpeg" alt="" id="pic">
+                    <h1>Jasdeep Singh</h1>
+                    <h5>jsingh11_be22@thapar.edu</h5>
+                    <ul>
+                        <li><a href="..\Dashboard\db.html">Dashboard</a></li>
+                        <li><a href="..\Appointment\db.html">Appointment</a></li>
+                        <li><a href="..\History\db.html">History</a></li>
+                        <li><a href="..\Profile\db.html">Profile</a></li>
+                    </ul>
                 </div>
             </div>
-        <div class="dash">
-            <div class="flex">
-                <div class="fi time">
-                    <h2>Upcoming Appointment</h2>
-                    <div class="dt">
-                        <h2 style="color: aliceblue;">20 JAN</h2>
-                        <h4 style="color: aliceblue;">6:30 PM</45>
+            <div class="dash">
+                <div class="flex">
+                    <div class="fi time">
+                        <h2>Upcoming Appointment</h2>
+                        <div class="dt">
+                            <h2 style="color: aliceblue;">20 JAN</h2>
+                            <h4 style="color: aliceblue;">6:30 PM</45>
+                        </div>
+                        <div class="mlink">
+                            <a href="../">Join</a>
+                        </div>
                     </div>
-                    <div class="mlink">
-                        <a href="../">Join</a>
+                    <div class="fi prescription">
+                        <h2>Prescriptions</h2>
+                        <div class="pres">
+                            <h3>10 JAN</h3>
+                            <h4 onclick="(alert('download'))" ;>SAVE</h4>
+                        </div>
+                        <div class="pres">
+                            <h3>10 JAN</h3>
+                            <h4 onclick="(alert('download'))" ;>SAVE</h4>
+                        </div>
+                        <div class="pres">
+                            <h3>10 JAN</h3>
+                            <h4 onclick="(alert('download'))" ;>SAVE</h4>
+                        </div>
                     </div>
-                </div>
-                <div class="fi prescription">
-                    <h2>Prescriptions</h2>
-                    <div class="pres">
-                        <h3>10 JAN</h3>
-                        <h4>SAVE</h4>
+                    <div class="fi emergency">
+                        <h2>IF EMERGENCY</h2>
+                        <h1 onclick="makePhoneCall('+918288008122')">CALL <span>8288008122</span></h1>
                     </div>
-                    <div class="pres">
-                        <h3>10 JAN</h3>
-                        <h4>SAVE</h4>
+                    <div class="fi cancel">
+                        <h2>Cancel Appointment</h2>
+                        <div class="cin">
+                            <h2>20 JAN 6:30 PM</h2>
+                            <div class="cinin">
+                                <h3 style="text-align: center; font-size:25px;">Cancel</h3>
+                            </div>
+                        </div>
                     </div>
-                    <div class="pres">
-                        <h3>10 JAN</h3>
-                        <h4>SAVE</h4>
-                    </div>
-                </div>
-                <div class="fi emergency">
-                    <h2>IF EMERGENCY</h2>
-                    <h1 onclick="makePhoneCall('+918288008122')">CALL <span>8288008122</span></h1>
-                </div>
-                <div class="fi carousel carousel1">
-                    <div class="ci active">Content 1</div>
-                    <div class="ci">Content 2</div>
-                    <div class="cnav">
-                        <span class="cbtn"></span> 
-                        <span class="cbtn"></span>    
-                        <span class="cbtn"></span>    
-                    </div>
-                </div>
-                <div class="fi carousel carousel2">
-                    <div class="ci active">Content 1</div>
-                    <div class="ci">Content 2</div>
-                    <div class="ci">Content 3</div>
-                    <div class="cnav">
-                        <span class="cbtn"></span> 
-                        <span class="cbtn"></span>    
-                        <span class="cbtn"></span>    
+                    <div class="fi carousel carousel2">
+                        <div class="ci active"><img class="cr" src="./Carousel/3.png"></div>
+                        <div class="ci"><img class="cr" src="./Carousel/2.jpg"></div>
+                        <div class="ci"><img class="cr" src="./Carousel/1.png"></div>
+                        <div class="cnav">
+                            <span class="cbtn"></span>
+                            <span class="cbtn"></span>
+                            <span class="cbtn"></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <script>
         const carousels = document.querySelectorAll('.carousel');
@@ -83,7 +85,7 @@
             const items = carousel.querySelectorAll('.ci');
             const buttons = carousel.querySelectorAll('.cbtn');
             let currentIndex = 0;
-            let interval = setInterval(rotateCarousel, 10000);
+            let interval = setInterval(rotateCarousel, 30000);
 
             function changeSlide(index) {
                 buttons.forEach(btn => btn.classList.remove('active'));
@@ -100,7 +102,7 @@
 
             buttons.forEach((button, index) => {
                 button.addEventListener('click', () => {
-                    clearInterval(interval); 
+                    clearInterval(interval);
                     currentIndex = index;
                     changeSlide(index);
                     setTimeout(() => {
@@ -110,8 +112,9 @@
             });
         });
         function makePhoneCall(phoneNumber) {
-      window.location.href = 'tel:' + phoneNumber;
-    }
+            window.location.href = 'tel:' + phoneNumber;
+        }
     </script>
 </body>
+
 </html>
